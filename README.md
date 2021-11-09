@@ -4,6 +4,7 @@ In this [example notebook](./byod-news-sm-sf.ipynb), we explore how to bring you
 
 ![](./images/arch.png)
 
+
 We also rely on the library of pre-trained models available in Hugging Face. We will demonstrate how you can bring your own custom data to fine tune the models, and use the processing scripts available in the Hugging Face hub for speeding up the process on tasks such as tokenization and data loading. Finally, we will deploy the model to a SageMaker endpoint and perform real-time inferences with sample phrases on our text classification use case.
 
 In this example, the Amazon SageMaker Estimator is pointing directly towards the entry point script “run_glue.py” located in the Hugging Face repository in GitHub, i.e., there is NO need to copy this script manually to our environment. You can rely on this script for bringing any custom data in CSV or JSON format for your text classification tasks, as long as it includes the classification label and text fields. Note that you have other equivalent scripts also available in the Transformers repository for other text processing tasks, such as: summarization, text-generation, etc. In our news classification example, this script together with the SageMaker and HuggingFace integration will automatically:
